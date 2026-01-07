@@ -1,0 +1,329 @@
+/* Dark Mode Styles */
+
+/* Variabili di colore - Light Mode (default) */
+:root {
+  --color-bg-primary: #f8f9fa;
+  --color-bg-secondary: #ffffff;
+  --color-text-primary: #212529;
+  --color-text-secondary: #6c757d;
+  --color-border: #dee2e6;
+  --color-shadow: rgba(0, 0, 0, 0.1);
+  --color-primary: #0d6efd;
+  --color-success: #198754;
+  --color-warning: #ffc107;
+  --color-error: #dc3545;
+  --color-info: #0dcaf0;
+}
+
+/* Dark Mode */
+[data-theme="dark"],
+body.dark-mode {
+  --color-bg-primary: #1a1a2e;
+  --color-bg-secondary: #16213e;
+  --color-text-primary: #e9ecef;
+  --color-text-secondary: #adb5bd;
+  --color-border: #495057;
+  --color-shadow: rgba(0, 0, 0, 0.3);
+  --color-primary: #0d6efd;
+  --color-success: #198754;
+  --color-warning: #ffc107;
+  --color-error: #dc3545;
+  --color-info: #0dcaf0;
+}
+
+/* Body */
+body {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Cards */
+.card,
+.panel,
+.container {
+  background-color: var(--color-bg-secondary);
+  border-color: var(--color-border);
+  box-shadow: 0 2px 4px var(--color-shadow);
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Testo */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-text-primary);
+}
+
+p, span, li, label {
+  color: var(--color-text-primary);
+}
+
+.text-secondary {
+  color: var(--color-text-secondary) !important;
+}
+
+/* Input */
+input,
+textarea,
+select {
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+  border-color: var(--color-border);
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+input::placeholder {
+  color: var(--color-text-secondary);
+}
+
+/* Bottoni */
+.btn-primary {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: #0b5ed7;
+  border-color: #0a58ca;
+}
+
+.btn-secondary {
+  background-color: var(--color-bg-secondary);
+  border-color: var(--color-border);
+  color: var(--color-text-primary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-border);
+}
+
+/* Tabella */
+table {
+  color: var(--color-text-primary);
+  border-color: var(--color-border);
+}
+
+thead {
+  background-color: var(--color-bg-secondary);
+  border-color: var(--color-border);
+}
+
+tbody tr {
+  border-color: var(--color-border);
+}
+
+tbody tr:hover {
+  background-color: var(--color-bg-secondary);
+}
+
+/* Navbar / Header */
+.navbar,
+header,
+.top-bar {
+  background-color: var(--color-bg-secondary);
+  border-color: var(--color-border);
+  box-shadow: 0 2px 4px var(--color-shadow);
+}
+
+.navbar a,
+header a,
+.top-bar a {
+  color: var(--color-text-primary);
+}
+
+.navbar a:hover,
+header a:hover,
+.top-bar a:hover {
+  color: var(--color-primary);
+}
+
+/* Modali */
+.modal,
+.dialog,
+.popup {
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+}
+
+.modal-header,
+.dialog-header {
+  background-color: var(--color-bg-secondary);
+  border-color: var(--color-border);
+}
+
+.modal-footer,
+.dialog-footer {
+  background-color: var(--color-bg-secondary);
+  border-color: var(--color-border);
+}
+
+.modal-backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Alerte */
+.alert {
+  color: var(--color-text-primary);
+  border-color: var(--color-border);
+}
+
+.alert-success {
+  background-color: rgba(25, 135, 84, 0.1);
+  border-color: var(--color-success);
+  color: var(--color-success);
+}
+
+.alert-warning {
+  background-color: rgba(255, 193, 7, 0.1);
+  border-color: var(--color-warning);
+  color: var(--color-warning);
+}
+
+.alert-error {
+  background-color: rgba(220, 53, 69, 0.1);
+  border-color: var(--color-error);
+  color: var(--color-error);
+}
+
+.alert-info {
+  background-color: rgba(13, 202, 240, 0.1);
+  border-color: var(--color-info);
+  color: var(--color-info);
+}
+
+/* Bottone Toggle Dark Mode */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--color-bg-secondary);
+  border: 2px solid var(--color-border);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px var(--color-shadow);
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px var(--color-shadow);
+}
+
+.theme-toggle svg {
+  width: 24px;
+  height: 24px;
+  color: var(--color-text-primary);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.theme-toggle .sun-icon {
+  position: absolute;
+  opacity: 1;
+}
+
+.theme-toggle .moon-icon {
+  position: absolute;
+  opacity: 0;
+  transform: rotate(-90deg);
+}
+
+[data-theme="dark"] .theme-toggle .sun-icon,
+body.dark-mode .theme-toggle .sun-icon {
+  opacity: 0;
+  transform: rotate(90deg);
+}
+
+[data-theme="dark"] .theme-toggle .moon-icon,
+body.dark-mode .theme-toggle .moon-icon {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+/* Mappa */
+.leaflet-container {
+  background-color: var(--color-bg-secondary);
+}
+
+.leaflet-control {
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-primary);
+}
+
+.leaflet-control a {
+  color: var(--color-text-primary) !important;
+}
+
+.leaflet-popup-content-wrapper {
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+  border-color: var(--color-border);
+}
+
+.leaflet-popup-tip {
+  background-color: var(--color-bg-secondary);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-secondary);
+}
+
+/* Animazioni di transizione */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Disabilita transizione per elementi specifici */
+.leaflet-container * {
+  transition: none !important;
+}
+
+/* Utilities */
+.bg-light {
+  background-color: var(--color-bg-secondary) !important;
+}
+
+.bg-dark {
+  background-color: var(--color-bg-primary) !important;
+}
+
+.text-dark {
+  color: var(--color-text-primary) !important;
+}
+
+.text-light {
+  color: var(--color-text-secondary) !important;
+}
+
+.border {
+  border-color: var(--color-border) !important;
+}
