@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Share Trip"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Share Code:"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/shareCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SHARE_12345678"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp" />
+
+    </LinearLayout>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:rowCount="3"
+        android:layout_weight="1">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnShareWhatsApp"
+            android:layout_width="0dp"
+            android:layout_columnWeight="1"
+            android:text="WhatsApp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnShareInstagram"
+            android:layout_width="0dp"
+            android:layout_columnWeight="1"
+            android:text="Instagram" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnShareEmail"
+            android:layout_width="0dp"
+            android:layout_columnWeight="1"
+            android:text="Email" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnShareFacebook"
+            android:layout_width="0dp"
+            android:layout_columnWeight="1"
+            android:text="Facebook" />
+
+    </GridLayout>
+
+</LinearLayout>
