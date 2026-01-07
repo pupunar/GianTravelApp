@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:padding="8dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:spacing="8dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAddPhoto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📷 Photo" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDiary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📔 Diary" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnShare"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📤 Share" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnExportPDF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📄 PDF" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnExportGPX"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🗺️ GPX" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnComments"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="💬 Comments" />
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+</LinearLayout>
