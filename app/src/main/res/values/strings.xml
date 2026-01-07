@@ -18,4 +18,7 @@
     <string name="end">End</string>
     <string name="active">🟢 Active</string>
     <string name="completed">⏹️ Completed</string>
+    
+    <!-- API Keys -->
+    <string name="openweather_api_key">YOUR_OPENWEATHERMAP_API_KEY</string>
 </resources>
