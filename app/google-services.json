@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1087229176032",
+    "project_id": "giantravelapp-88875",
+    "storage_bucket": "giantravelapp-88875.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1087229176032:android:e6f5a5e5a473d55a574885",
+        "android_client_info": {
+          "package_name": "com.giantravelapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_gbxG8lVZHCAhjQLsjKG1w35LQpMxSUM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
