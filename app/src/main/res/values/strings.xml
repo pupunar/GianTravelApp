@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GianTravelApp</string>
+    <string name="my_trips">My Trips</string>
+    <string name="new_trip">+ New Trip</string>
+    <string name="trip_details">Trip Details</string>
+    <string name="add_photo">📷 Add Photo</string>
+    <string name="diary">📔 Diary</string>
+    <string name="share">📤 Share</string>
+    <string name="export_pdf">📄 PDF</string>
+    <string name="export_gpx">🗺️ GPX</string>
+    <string name="comments">💬 Comments</string>
+    <string name="tracking_trip">Tracking your journey...</string>
+    <string name="trip_name">Trip Name</string>
+    <string name="trip_description">Description</string>
+    <string name="trip_date">Date</string>
+    <string name="start">Start</string>
+    <string name="end">End</string>
+    <string name="active">🟢 Active</string>
+    <string name="completed">⏹️ Completed</string>
+</resources>
