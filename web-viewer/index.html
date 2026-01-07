@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GianTravelApp - Follow Trip</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1>🗺️ Follow {{ tripName }}</h1>
+                <div class="trip-info">
+                    <span class="status" :class="tripActive ? 'active' : 'completed'">
+                        {{ tripActive ? '🟢 Tracking...' : '✅ Completed' }}
+                    </span>
+                    <span class="stats">📍 {{ locationsCount }} points | 🧭 {{ distanceKm }} km</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="container">
+            <!-- Map -->
+            <div class="map-container">
+                <div id="map"></div>
+                <div class="map-overlay" v-if="currentLocation">
+                    <div class="current-location">
+                        <h3>📍 Current Location</h3>
+                        <p>{{ currentLocation.latitude.toFixed(4) }}, {{ currentLocation.longitude.toFixed(4) }}</p>
+                        <p v-if="currentLocation.temperature">🌡️ {{ currentLocation.temperature }}°C - {{ currentLocation.weatherCondition }}</p>
+                        <p v-if="currentLocation.speed">💨 Speed: {{ (currentLocation.speed * 3.6).toFixed(1) }} km/h</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Weather Info -->
+                <div v-if="currentLocation" class="weather-card">
+                    <h3>🌤️ Weather</h3>
+                    <div class="weather-info">
+                        <div class="temp">{{ currentLocation.temperature }}°C</div>
+                        <div class="condition">{{ currentLocation.weatherCondition }}</div>
+                        <div class="humidity">Humidity: {{ currentLocation.humidity }}%</div>
+                    </div>
+                </div>
+
+                <!-- Diary Entries -->
+                <div class="diary-card" v-if="diaryEntries.length > 0">
+                    <h3>📔 Diary</h3>
+                    <div class="entries">
+                        <div v-for="entry in diaryEntries" :key="entry.id" class="entry">
+                            <h4>{{ entry.title }}</h4>
+                            <p>{{ entry.content.substring(0, 100) }}...</p>
+                            <small>{{ formatTime(entry.timestamp) }}</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Comments Section -->
+                <div class="comments-card">
+                    <h3>💬 Comments ({{ comments.length }})</h3>
+                    <div class="comments-list">
+                        <div v-for="comment in comments" :key="comment.id" class="comment">
+                            <p><strong>{{ comment.friendName }}:</strong> {{ comment.message }}</p>
+                            <small>{{ formatTime(comment.timestamp) }}</small>
+                        </div>
+                    </div>
+                    <div class="add-comment">
+                        <input 
+                            v-model="newComment.name"
+                            placeholder="Your name"
+                            class="input"
+                        />
+                        <textarea 
+                            v-model="newComment.message"
+                            placeholder="Add a comment..."
+                            class="textarea"
+                        ></textarea>
+                        <button @click="addComment" class="btn btn-primary">Send Comment</button>
+                    </div>
+                </div>
+
+                <!-- Statistics -->
+                <div class="stats-card">
+                    <h3>📊 Statistics</h3>
+                    <div class="stat-item">
+                        <span class="label">Distance:</span>
+                        <span class="value">{{ distanceKm }} km</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="label">Duration:</span>
+                        <span class="value">{{ duration }}</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="label">Avg Speed:</span>
+                        <span class="value">{{ avgSpeed }} km/h</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="label">Max Altitude:</span>
+                        <span class="value">{{ maxAltitude }} m</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
